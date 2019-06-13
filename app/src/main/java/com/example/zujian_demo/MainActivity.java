@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
+import com.example.componentlib.ServiceFactory;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button mLogin;
@@ -35,13 +37,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.login:
-
+                ServiceFactory.getInstance()
+                        .getLoginService()
+                        .launch(this, "");
                 break;
             case R.id.gozujian:
-
+                ServiceFactory.getInstance()
+                        .getMineService()
+                        .launch(this, 0);
                 break;
             case R.id.showUI:
-
+                ServiceFactory.getInstance()
+                        .getLoginService()
+                        .newUserInfoFragment(getSupportFragmentManager(),
+                        R.id.container,
+                        new Bundle());
                 break;
         }
     }

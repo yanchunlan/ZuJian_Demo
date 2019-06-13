@@ -9,11 +9,13 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="组件化架构搭建!"/>
 
     <Button
+        android:layout_marginTop="20dp"
         android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
